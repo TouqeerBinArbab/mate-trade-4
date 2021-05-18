@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import colors from './constants/colors';
 
 const CommonStyles = StyleSheet.create({
   appRedColor: {
@@ -6,6 +7,20 @@ const CommonStyles = StyleSheet.create({
   },
   container: {
     flex: 1,
+  },
+  loginItemStyle: {
+    // borderColor: '#C5D4E8',
+    borderColor: 'rgb(205, 211, 219)',
+    alignSelf: 'center',
+    borderRadius: 2,
+    borderWidth: 1,
+    margin: 5,
+    backgroundColor: colors.white,
+    shadowColor: '#8BB3E9',
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
   },
 
   zIndex:{

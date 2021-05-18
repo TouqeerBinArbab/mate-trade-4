@@ -6,6 +6,7 @@ import thunk from 'redux-thunk';
 import reducers from './reducers';
 import {createStore, applyMiddleware, compose} from 'redux';
 import Routes from './routes';
+import {StatusBar} from 'react-native';
 
 const composeEnhancers = compose;
 const store = createStore(reducers, composeEnhancers(applyMiddleware(thunk)));
@@ -17,6 +18,7 @@ class App extends React.Component {
   render() {
     return (
       <Provider store={store}>
+        <StatusBar backgroundColor="#297dec" barStyle={'light-content'} />
         <Routes />
       </Provider>
     );

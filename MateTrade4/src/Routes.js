@@ -7,6 +7,8 @@ import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 import {Root, Spinner} from 'native-base';
 
+import Tabs from './components/tabs';
+
 const Styles = {
   header__wrapper: {
     top: 0,
@@ -26,12 +28,18 @@ const RootStack = createStackNavigator(
       screen: Login,
       navigationOptions: {
         title: 'Login',
-        header: null,
+        
       },
     },
+    Tabs: {
+      screen: ({ navigation }) => <Tabs screenProps={{ rootNavigation: navigation}} />,
+      navigationOptions: {
+          header: null,
+      }
+  },
   },
   {
-    initialRouteName: 'Login',
+    initialRouteName: 'Tabs',
     navigationOptions: {
       headerStyle: {backgroundColor: colors.white},
       gesturesEnabled: false,
