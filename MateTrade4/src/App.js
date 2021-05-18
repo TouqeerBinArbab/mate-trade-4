@@ -1,31 +1,24 @@
 import 'react-native-gesture-handler';
 import React, {Component} from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {Root} from 'native-base';
-import Routes from './Routes';
-import CommonStyles from './CommonStyles';
-import {StatusBar, SafeAreaView} from 'react-native';
+
+import {Provider} from 'react-redux';
+import thunk from 'redux-thunk';
+import reducers from './reducers';
+import {createStore, applyMiddleware, compose} from 'redux';
+import Routes from './routes';
+
+const composeEnhancers = compose;
+const store = createStore(reducers, composeEnhancers(applyMiddleware(thunk)));
 class App extends React.Component {
-  navigationRef: any;
   constructor(props) {
     super(props);
   }
 
   render() {
     return (
-      <Root>
-        <StatusBar
-          translucent
-          backgroundColor="transparent"
-          barStyle={'dark-content'}
-        />
-        <SafeAreaView style={CommonStyles.container}>
-          <NavigationContainer
-            ref={(navigationRef) => (this.navigationRef = navigationRef)}>
-            <Routes />
-          </NavigationContainer>
-        </SafeAreaView>
-      </Root>
+      <Provider store={store}>
+        <Routes />
+      </Provider>
     );
   }
 }
