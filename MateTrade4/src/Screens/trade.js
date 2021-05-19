@@ -1,7 +1,7 @@
 import {Icon} from 'native-base';
 import React, {Component} from 'react';
 import {StatusBar, View, Text, ImageBackground} from 'react-native';
-
+import LinearGradient from 'react-native-linear-gradient';
 import CommonStyles from '../commonStyles';
 import images from '../constants/images';
 
@@ -52,21 +52,20 @@ export default class Trade extends Component {
           />
         </View>
         <View style={[CommonStyles.container]}>
-          <ImageBackground
-            style={[CommonStyles.container, CommonStyles.backgroundImage]}
-            source={images.backImage}>
-            <View style={{flex: 1, justifyContent: "center", alignItems: "center"}}>
+          <LinearGradient style={{flex: 1}} colors={['#C9D7EA', '#ebf2f9']}>
+            <View
+              style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
               <Icon
-                name="graph" type='SimpleLineIcons'
+                name="graph"
+                type="SimpleLineIcons"
                 style={[
                   {paddingVertical: 10, fontSize: 70},
                   CommonStyles.margin,
                   CommonStyles.textColorBlack,
                 ]}
-               
               />
             </View>
-          </ImageBackground>
+          </LinearGradient>
         </View>
       </View>
     );

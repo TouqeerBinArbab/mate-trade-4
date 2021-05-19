@@ -1,7 +1,7 @@
 import {Icon} from 'native-base';
 import React, {Component} from 'react';
 import {StatusBar, View, Text, ImageBackground} from 'react-native';
-
+import LinearGradient from 'react-native-linear-gradient';
 import CommonStyles from '../commonStyles';
 import images from '../constants/images';
 
@@ -52,9 +52,7 @@ export default class Indicator extends Component {
           />
         </View>
         <View style={[CommonStyles.container]}>
-          <ImageBackground
-            style={[CommonStyles.container, CommonStyles.backgroundImage]}
-            source={images.backImage}>
+        <LinearGradient style={{flex: 1}} colors={['#C9D7EA', '#ebf2f9']}>
             <View style={{flex: 1, justifyContent: "center", alignItems: "center"}}>
               <Icon
                 name="bar-graph" type='Entypo'
@@ -66,7 +64,7 @@ export default class Indicator extends Component {
                
               />
             </View>
-          </ImageBackground>
+        </LinearGradient>
         </View>
       </View>
     );

@@ -8,6 +8,8 @@ target 'MateTrade4' do
 
   use_react_native!(:path => config["reactNativePath"])
 
+  pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
+
   target 'MateTrade4Tests' do
     inherit! :complete
     # Pods for testing

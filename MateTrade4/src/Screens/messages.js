@@ -7,6 +7,7 @@ import {
   ImageBackground,
   TouchableOpacity,
 } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 
 import CommonStyles from '../commonStyles';
 import colors from '../constants/colors';
@@ -59,9 +60,7 @@ export default class Messages extends Component {
           />
         </View>
         <View style={[CommonStyles.container]}>
-          <ImageBackground
-            style={[CommonStyles.container, CommonStyles.backgroundImage]}
-            source={images.backImage}>
+          <LinearGradient style={{flex: 1}} colors={['#C9D7EA', '#ebf2f9']}>
             <View
               style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
               <Icon
@@ -127,7 +126,7 @@ export default class Messages extends Component {
                 </Text>
               </TouchableOpacity>
             </View>
-          </ImageBackground>
+          </LinearGradient>
         </View>
       </View>
     );
